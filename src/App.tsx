@@ -44,11 +44,21 @@ export default function App() {
       <header className="border-b bg-card">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <Heart className="w-6 h-6 text-primary-foreground" />
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center">
+             <img
+                src="src/images/psy-care-logo.png"   // update to your actual path
+                alt="PsyCare logo"
+                style={{ backgroundColor: 'transparent' }}
+                className="w-10 h-10 object-contain"
+                loading="eager"
+                decoding="async"
+              />
             </div>
             <div>
-              <h1 className="text-2xl font-semibold">MindCare</h1>
+              <h1 className="text-2xl font-semibold">
+                <span style={{ color: "#032340" }}>Psy</span>
+                <span style={{ color: "#6FBFB7" }}>Care</span>
+              </h1>
               <p className="text-muted-foreground">Your mental health companion</p>
             </div>
           </div>
@@ -78,7 +88,7 @@ export default function App() {
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <MessageCircle className="w-5 h-5" />
-                  <span>Chat with MindCare Assistant</span>
+                  <span>Chat with PsyCare Assistant</span>
                 </CardTitle>
                 <p className="text-muted-foreground">
                   Share your thoughts and feelings in a safe, supportive environment. Our AI assistant can provide coping strategies or help you connect with professional support when needed.

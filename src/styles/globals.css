@@ -39,6 +39,16 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --navy-900: #032340;
+  --porcelain: #F2F1F0;
+  --ink-950: #00010D;
+
+  --blue-600: #3973BF;
+  --blue-400: #5B9ED9;
+  --blue-300: #94CEF2;
+
+  --teal-500: #6FBFB7;
+  --mint-300: #A0D9B9;
 }
 
 .dark {
