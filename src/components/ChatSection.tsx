@@ -294,9 +294,9 @@ export function ChatSection({ onScheduleRequest }: ChatSectionProps) {
                 {message.sender === "user" ? (
                   <User className="w-4 h-4" />
                 ) : (
-                  <img 
-                    src="/src/images/bot.jpeg" 
-                    alt="Bot" 
+                  <img
+                    src="/src/images/bot.jpeg"
+                    alt="Bot"
                     className="w-8 h-8 rounded-full object-cover"
                   />
                 )}
@@ -356,9 +356,9 @@ export function ChatSection({ onScheduleRequest }: ChatSectionProps) {
           <div className="flex justify-start">
             <div className="flex items-start space-x-2">
               <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center">
-                <img 
-                  src="/src/images/bot.jpeg" 
-                  alt="Bot" 
+                <img
+                  src="/src/images/bot.jpeg"
+                  alt="Bot"
                   className="w-8 h-8 rounded-full object-cover"
                 />
               </div>
