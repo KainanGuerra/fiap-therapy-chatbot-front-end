@@ -1,0 +1,154 @@
+import React, { useState } from 'react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
+import { Card, CardContent, CardHeader, CardTitle } from './components/ui/card';
+import { ChatSection } from './components/ChatSection';
+import { FindSpecialist } from './components/FindSpecialist';
+import { MySchedule } from './components/MySchedule';
+import { MessageCircle, Search, Calendar, Heart, Shield, Users } from 'lucide-react';
+
+interface Specialist {
+  id: string;
+  name: string;
+  title: string;
+  specialties: string[];
+  rating: number;
+  reviews: number;
+  location: string;
+  distance: string;
+  availability: string;
+  phone: string;
+  email: string;
+  bio: string;
+  price: string;
+}
+
+export default function App() {
+  const [activeTab, setActiveTab] = useState('chat');
+  const [selectedSpecialist, setSelectedSpecialist] = useState<{ specialistName: string; specialistTitle: string } | null>(null);
+
+  const handleScheduleRequest = () => {
+    setActiveTab('specialist');
+  };
+
+  const handleScheduleAppointment = (specialist: Specialist) => {
+    setSelectedSpecialist({
+      specialistName: specialist.name,
+      specialistTitle: specialist.title
+    });
+    setActiveTab('schedule');
+  };
+
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="border-b bg-card">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+              <Heart className="w-6 h-6 text-primary-foreground" />
+            </div>
+            <div>
+              <h1 className="text-2xl font-semibold">MindCare</h1>
+              <p className="text-muted-foreground">Your mental health companion</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-8">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <TabsList className="grid w-full grid-cols-3 mb-8">
+            <TabsTrigger value="chat" className="flex items-center space-x-2">
+              <MessageCircle className="w-4 h-4" />
+              <span>Chat</span>
+            </TabsTrigger>
+            <TabsTrigger value="specialist" className="flex items-center space-x-2">
+              <Search className="w-4 h-4" />
+              <span>Find Specialist</span>
+            </TabsTrigger>
+            <TabsTrigger value="schedule" className="flex items-center space-x-2">
+              <Calendar className="w-4 h-4" />
+              <span>My Schedule</span>
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="chat">
+            <Card className="w-full max-w-4xl mx-auto">
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <MessageCircle className="w-5 h-5" />
+                  <span>Chat with MindCare Assistant</span>
+                </CardTitle>
+                <p className="text-muted-foreground">
+                  Share your thoughts and feelings in a safe, supportive environment. Our AI assistant can provide coping strategies or help you connect with professional support when needed.
+                </p>
+              </CardHeader>
+              <CardContent>
+                <ChatSection onScheduleRequest={handleScheduleRequest} />
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="specialist">
+            <div className="w-full max-w-6xl mx-auto">
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold mb-2">Find a Mental Health Specialist</h2>
+                <p className="text-muted-foreground">
+                  Connect with qualified therapists, psychologists, and psychiatrists in your area.
+                </p>
+              </div>
+              
+              {/* Trust Indicators */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                <Card className="text-center p-4">
+                  <Shield className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <h3 className="font-semibold text-sm">Licensed Professionals</h3>
+                  <p className="text-xs text-muted-foreground">All specialists are verified and licensed</p>
+                </Card>
+                <Card className="text-center p-4">
+                  <Users className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <h3 className="font-semibold text-sm">Personalized Matching</h3>
+                  <p className="text-xs text-muted-foreground">Find specialists that match your needs</p>
+                </Card>
+                <Card className="text-center p-4">
+                  <Heart className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <h3 className="font-semibold text-sm">Compassionate Care</h3>
+                  <p className="text-xs text-muted-foreground">Dedicated to your mental wellness</p>
+                </Card>
+              </div>
+              
+              <FindSpecialist onScheduleAppointment={handleScheduleAppointment} />
+            </div>
+          </TabsContent>
+
+          <TabsContent value="schedule">
+            <div className="w-full max-w-4xl mx-auto">
+              <div className="mb-6">
+                <h2 className="text-2xl font-semibold mb-2">My Schedule</h2>
+                <p className="text-muted-foreground">
+                  Manage your therapy appointments and track your mental health journey.
+                </p>
+              </div>
+              <MySchedule newAppointment={selectedSpecialist} />
+            </div>
+          </TabsContent>
+        </Tabs>
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t bg-card mt-16">
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-center text-muted-foreground">
+            <p className="text-sm">
+              <strong>Important:</strong> If you're experiencing a mental health crisis, please contact emergency services or a crisis helpline immediately.
+            </p>
+            <p className="text-xs mt-2">
+              Crisis Text Line: Text HOME to 741741 | National Suicide Prevention Lifeline: 988
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
