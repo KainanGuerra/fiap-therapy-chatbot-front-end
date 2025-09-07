@@ -38,50 +38,50 @@ const mockAppointments: Appointment[] = [
     specialistTitle: "Licensed Clinical Psychologist",
     date: "2024-09-10",
     time: "2:00 PM",
-    duration: "50 minutes",
+    duration: "50 minutos",
     type: "video",
     status: "upcoming",
-    sessionType: "Individual Therapy",
-    notes: "Follow-up on anxiety management techniques",
+    sessionType: "Terapia Individual",
+    notes: "Acompanhamento sobre técnicas de controle de ansiedade",
   },
   {
     id: "2",
     specialistId: "3",
     specialistName: "Dr. Emily Rodriguez",
-    specialistTitle: "Licensed Marriage & Family Therapist",
+    specialistTitle: "Terapeuta de Casais e Família Licenciada",
     date: "2024-09-12",
     time: "10:00 AM",
-    duration: "60 minutes",
+    duration: "60 minutos",
     type: "in-person",
     status: "upcoming",
     location: "Family Counseling Center",
-    sessionType: "Couples Therapy",
+    sessionType: "Terapia de Casais",
   },
   {
     id: "3",
     specialistId: "2",
     specialistName: "Dr. Michael Chen",
-    specialistTitle: "Psychiatrist & Therapist",
+    specialistTitle: "Psiquiatra e Terapeuta",
     date: "2024-09-05",
     time: "3:30 PM",
-    duration: "30 minutes",
+    duration: "30 minutos",
     type: "phone",
     status: "completed",
-    sessionType: "Medication Check-in",
-    notes: "Discussed medication adjustments",
+    sessionType: "Consulta de Medicação",
+    notes: "Discutidos ajustes de medicação",
   },
   {
     id: "4",
     specialistId: "1",
     specialistName: "Dr. Sarah Johnson",
-    specialistTitle: "Licensed Clinical Psychologist",
+    specialistTitle: "Psicóloga Clínica Licenciada",
     date: "2024-08-28",
     time: "2:00 PM",
-    duration: "50 minutes",
+    duration: "50 minutos",
     type: "video",
     status: "completed",
-    sessionType: "Individual Therapy",
-    notes: "Worked on cognitive behavioral techniques",
+    sessionType: "Terapia Individual",
+    notes: "Trabalhamos técnicas cognitivo-comportamentais",
   },
 ];
 
@@ -176,7 +176,7 @@ export function MySchedule({ newAppointment }: MyScheduleProps) {
                   : {}
               }
             >
-              {appointment.status}
+              {appointment.status === "upcoming" ? "Próximo" : "Concluído"}
             </Badge>
           </div>
         </div>
@@ -227,10 +227,10 @@ export function MySchedule({ newAppointment }: MyScheduleProps) {
         {appointment.status === "upcoming" && (
           <div className="flex space-x-2 pt-3">
             <Button variant="outline" size="sm">
-              Reschedule
+              Reagendar
             </Button>
             <Button variant="outline" size="sm">
-              Cancel
+              Cancelar
             </Button>
             {appointment.type === "video" && (
               <button
@@ -248,7 +248,7 @@ export function MySchedule({ newAppointment }: MyScheduleProps) {
                 }
               >
                 <Video className="w-4 h-4 mr-2" />
-                Join Session
+                Entrar na Sessão
               </button>
             )}
           </div>
@@ -265,8 +265,8 @@ export function MySchedule({ newAppointment }: MyScheduleProps) {
             <div className="flex items-center space-x-2 text-green-700">
               <CheckCircle className="w-5 h-5" />
               <p>
-                Ready to schedule with {newAppointment.specialistName}? Contact
-                them to book your appointment.
+                Pronto para agendar com {newAppointment.specialistName}? Entre em contato
+                para marcar sua consulta.
               </p>
             </div>
           </CardContent>
@@ -276,10 +276,10 @@ export function MySchedule({ newAppointment }: MyScheduleProps) {
       <Tabs defaultValue="upcoming" className="w-full">
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="upcoming">
-            Upcoming ({upcomingAppointments.length})
+            Próximos ({upcomingAppointments.length})
           </TabsTrigger>
           <TabsTrigger value="past">
-            Past Sessions ({pastAppointments.length})
+            Sessões Passadas ({pastAppointments.length})
           </TabsTrigger>
         </TabsList>
 
@@ -289,11 +289,11 @@ export function MySchedule({ newAppointment }: MyScheduleProps) {
               <CardContent className="p-8 text-center">
                 <Calendar className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
                 <h3 className="text-lg font-semibold mb-2">
-                  No upcoming appointments
+                  Nenhum agendamento próximo
                 </h3>
                 <p className="text-muted-foreground">
-                  Schedule your first session to get started on your mental
-                  health journey.
+                  Agende sua primeira sessão para começar sua jornada de saúde
+                  mental.
                 </p>
               </CardContent>
             </Card>
@@ -309,9 +309,9 @@ export function MySchedule({ newAppointment }: MyScheduleProps) {
             <Card>
               <CardContent className="p-8 text-center">
                 <CheckCircle className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">No past sessions</h3>
+                <h3 className="text-lg font-semibold mb-2">Nenhuma sessão passada</h3>
                 <p className="text-muted-foreground">
-                  Your completed therapy sessions will appear here.
+                  Suas sessões de terapia concluídas aparecerão aqui.
                 </p>
               </CardContent>
             </Card>

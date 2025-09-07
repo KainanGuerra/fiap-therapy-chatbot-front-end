@@ -25,7 +25,7 @@ export function ChatSection({ onScheduleRequest }: ChatSectionProps) {
     {
       id: "1",
       content:
-        "Hello! I'm here to support you. How are you feeling today? You can share what's on your mind, and I'll do my best to help.",
+        "Olá! Estou aqui para apoiá-lo. Como você está se sentindo hoje? Você pode compartilhar o que está em sua mente, e farei o meu melhor para ajudar.",
       sender: "bot",
       timestamp: new Date(),
     },
@@ -54,74 +54,86 @@ export function ChatSection({ onScheduleRequest }: ChatSectionProps) {
 
     // Crisis indicators
     const crisisKeywords = [
-      "suicide",
-      "kill myself",
-      "end it all",
-      "not worth living",
-      "hurt myself",
-      "self harm",
+      "suicide", "suicídio", "suicidio",
+      "kill myself", "me matar", "me suicidar",
+      "end it all", "acabar com tudo", "terminar com tudo",
+      "not worth living", "não vale a pena viver", "vida não vale a pena",
+      "hurt myself", "me machucar", "me ferir", "me fazer mal",
+      "self harm", "automutilação", "auto mutilação", "me cortar",
+      "quero morrer", "vou me matar", "não aguento mais",
+      "melhor morto", "não quero mais viver", "acabar comigo",
     ];
     const deathKeywords = [
-      "death",
-      "die",
-      "dying",
-      "want to die",
-      "better off dead",
+      "death", "morte", "morrer",
+      "die", "morrer", "falecer",
+      "dying", "morrendo", "agonizando",
+      "want to die", "quero morrer", "desejo morrer",
+      "better off dead", "melhor morto", "melhor morrer",
+      "pensamentos de morte", "penso em morte", "obsessão com morte",
     ];
     const severeKeywords = [
-      "severe depression",
-      "panic attacks",
-      "can't function",
-      "completely overwhelmed",
-      "breakdown",
-      "trauma",
-      "ptsd",
+      "severe depression", "depressão severa", "depressão grave",
+      "panic attacks", "ataques de pânico", "crises de pânico",
+      "can't function", "não consigo funcionar", "não funciono",
+      "completely overwhelmed", "completamente sobrecarregado", "totalmente perdido",
+      "breakdown", "colapso", "surto", "crise nervosa",
+      "trauma", "trauma", "traumatizado",
+      "ptsd", "tept", "estresse pós-traumático",
+      "depressão profunda", "ansiedade severa", "pânico constante",
+      "não consigo sair da cama", "paralisia total", "incapacitado",
     ];
     const chronicKeywords = [
-      "months of",
-      "years of",
-      "always feel",
-      "never feel better",
-      "getting worse",
+      "months of", "meses de", "há meses",
+      "years of", "anos de", "há anos",
+      "always feel", "sempre sinto", "sempre me sinto",
+      "never feel better", "nunca me sinto melhor", "não melhoro nunca",
+      "getting worse", "piorando", "ficando pior",
+      "desde sempre", "toda vida", "nunca mudou",
+      "só piora", "cada vez pior", "sem melhora",
     ];
     const psychologyKeywords = [
-      "behavior patterns",
-      "cognitive",
-      "thinking patterns",
-      "phobia",
-      "ocd",
-      "adhd",
-      "autism",
-      "personality disorder",
+      "behavior patterns", "padrões de comportamento", "comportamentos repetitivos",
+      "cognitive", "cognitivo", "cognição", "pensamento",
+      "thinking patterns", "padrões de pensamento", "forma de pensar",
+      "phobia", "fobia", "fobias", "medo extremo",
+      "ocd", "toc", "obsessivo compulsivo", "manias",
+      "adhd", "tdah", "déficit de atenção", "hiperatividade",
+      "autism", "autismo", "autista", "espectro autista",
+      "personality disorder", "transtorno de personalidade", "distúrbio de personalidade",
+      "compulsões", "obsessões", "rituais", "comportamento obsessivo",
     ];
     const therapyKeywords = [
-      "relationship",
-      "family",
-      "couples",
-      "grief",
-      "loss",
-      "addiction",
+      "relationship", "relacionamento", "relacionamentos",
+      "family", "família", "familiar", "familiares",
+      "couples", "casais", "casal", "namoro", "casamento",
+      "grief", "luto", "perda", "falecimento",
+      "loss", "perda", "perdas", "separação",
+      "addiction", "vício", "dependência", "adicção",
+      "problemas conjugais", "conflitos familiares", "divórcio",
+      "alcoolismo", "drogas", "dependência química",
     ];
 
     // Mild stress/advice keywords
     const mildKeywords = [
-      "stressed",
-      "tired",
-      "overwhelmed",
-      "anxious about work",
-      "sleep problems",
-      "work stress",
+      "stressed", "estressado", "estressada", "stress",
+      "tired", "cansado", "cansada", "exausto", "exausta",
+      "overwhelmed", "sobrecarregado", "sobrecarregada", "perdido",
+      "anxious about work", "ansioso com trabalho", "ansiedade no trabalho",
+      "sleep problems", "problemas de sono", "insônia", "não durmo bem",
+      "work stress", "estresse no trabalho", "pressão no trabalho",
+      "preocupado", "nervoso", "agitado", "irritado",
+      "sem energia", "desmotivado", "chateado", "frustrado",
     ];
 
     if (crisisKeywords.some((keyword) => lowerMessage.includes(keyword))) {
       return {
         needsProfessionalHelp: true,
         response:
-          "I'm very concerned about what you're sharing. These feelings are serious and you deserve immediate support. Please consider reaching out to a crisis helpline or scheduling an emergency appointment with a psychologist, psychiatrist, or other mental health professional. Would you like me to help you find someone to talk to right away?",
+          "Estou muito preocupado com o que você está compartilhando. Esses sentimentos são sérios e você merece apoio imediato. Por favor, considere entrar em contato com uma linha de ajuda para crises ou agendar uma consulta de emergência com um psicólogo, psiquiatra ou outro profissional de saúde mental. Gostaria que eu ajudasse você a encontrar alguém para conversar imediatamente?",
         suggestions: [
-          "Find emergency support",
-          "Schedule urgent appointment",
-          "Crisis helpline numbers",
+          "Encontrar apoio de emergência",
+          "Agendar consulta urgente",
+          "Números de linha de crise",
         ],
         showCrisisCard: true,
       };
@@ -131,11 +143,11 @@ export function ChatSection({ onScheduleRequest }: ChatSectionProps) {
       return {
         needsProfessionalHelp: true,
         response:
-          "I'm deeply concerned about what you're sharing. Thoughts about death are serious and you don't have to face this alone. There are mental health professionals who specialize in helping people through these difficult times. Please consider reaching out for immediate support.",
+          "Estou profundamente preocupado com o que você está compartilhando. Pensamentos sobre morte são sérios e você não precisa enfrentar isso sozinho. Existem profissionais de saúde mental que se especializam em ajudar pessoas durante esses momentos difíceis. Por favor, considere buscar apoio imediato.",
         suggestions: [
-          "Call crisis specialist",
-          "Schedule emergency appointment",
-          "Access crisis resources",
+          "Ligar para especialista em crise",
+          "Agendar consulta de emergência",
+          "Acessar recursos de crise",
         ],
         showCrisisCard: true,
       };
@@ -145,11 +157,11 @@ export function ChatSection({ onScheduleRequest }: ChatSectionProps) {
       return {
         needsProfessionalHelp: true,
         response:
-          "Based on what you're describing, it sounds like you might benefit from working with a clinical psychologist. Psychologists specialize in understanding behavior patterns, cognitive processes, and can provide evidence-based treatments like cognitive-behavioral therapy (CBT). They can help you develop effective coping strategies and work through these challenges systematically.",
+          "Com base no que você está descrevendo, parece que você pode se beneficiar de trabalhar com um psicólogo clínico. Os psicólogos se especializam em entender padrões de comportamento, processos cognitivos e podem fornecer tratamentos baseados em evidências como a terapia cognitivo-comportamental (TCC). Eles podem ajudá-lo a desenvolver estratégias eficazes de enfrentamento e trabalhar através desses desafios sistematicamente.",
         suggestions: [
-          "Find a psychologist",
-          "Learn about CBT",
-          "Schedule psychological assessment",
+          "Encontrar um psicólogo",
+          "Aprender sobre TCC",
+          "Agendar avaliação psicológica",
         ],
       };
     }
@@ -158,11 +170,11 @@ export function ChatSection({ onScheduleRequest }: ChatSectionProps) {
       return {
         needsProfessionalHelp: true,
         response:
-          "It sounds like you're dealing with some important relationship or life challenges. A licensed therapist who specializes in these areas could provide valuable support. Depending on your specific needs, you might also benefit from seeing a psychologist who can offer both therapy and psychological assessment if needed.",
+          "Parece que você está lidando com alguns desafios importantes de relacionamento ou vida. Um terapeuta licenciado que se especializa nessas áreas pode fornecer apoio valioso. Dependendo de suas necessidades específicas, você também pode se beneficiar de consultar um psicólogo que pode oferecer tanto terapia quanto avaliação psicológica, se necessário.",
         suggestions: [
-          "Find a therapist",
-          "Find a psychologist",
-          "Explore counseling options",
+          "Encontrar um terapeuta",
+          "Encontrar um psicólogo",
+          "Explorar opções de aconselhamento",
         ],
       };
     }
@@ -174,12 +186,12 @@ export function ChatSection({ onScheduleRequest }: ChatSectionProps) {
       return {
         needsProfessionalHelp: true,
         response:
-          "What you're experiencing sounds really challenging and it takes courage to share this. These symptoms would benefit greatly from professional support. A psychologist can provide comprehensive assessment and evidence-based treatments, while a therapist can offer ongoing counseling support. If medication might be helpful, a psychiatrist could also be part of your care team.",
+          "O que você está experienciando parece realmente desafiador e é preciso coragem para compartilhar isso. Esses sintomas se beneficiariam muito do apoio profissional. Um psicólogo pode fornecer avaliação abrangente e tratamentos baseados em evidências, enquanto um terapeuta pode oferecer apoio contínuo de aconselhamento. Se medicação puder ser útil, um psiquiatra também pode fazer parte de sua equipe de cuidados.",
         suggestions: [
-          "Find a psychologist",
-          "Find a therapist",
-          "Learn about treatments",
-          "Schedule consultation",
+          "Encontrar um psicólogo",
+          "Encontrar um terapeuta",
+          "Aprender sobre tratamentos",
+          "Agendar consulta",
         ],
       };
     }
@@ -188,12 +200,12 @@ export function ChatSection({ onScheduleRequest }: ChatSectionProps) {
       return {
         needsProfessionalHelp: false,
         response:
-          "It sounds like you're dealing with some stress. Here are some strategies that might help: Practice deep breathing exercises, try the 5-4-3-2-1 grounding technique, maintain a regular sleep schedule, and engage in physical activity. If these feelings persist or worsen, consider talking to a psychologist or therapist who can provide personalized coping strategies.",
+          "Parece que você está lidando com algum estresse. Aqui estão algumas estratégias que podem ajudar: pratique exercícios de respiração profunda, tente a técnica de ancoragem 5-4-3-2-1, mantenha um horário regular de sono e pratique atividade física. Se esses sentimentos persistirem ou piorarem, considere conversar com um psicólogo ou terapeuta que pode fornecer estratégias personalizadas de enfrentamento.",
         suggestions: [
-          "Try breathing exercises",
-          "Practice mindfulness",
-          "Improve sleep hygiene",
-          "Consider seeing a psychologist",
+          "Tentar exercícios de respiração",
+          "Praticar mindfulness",
+          "Melhorar higiene do sono",
+          "Considerar ver um psicólogo",
         ],
       };
     }
@@ -202,12 +214,12 @@ export function ChatSection({ onScheduleRequest }: ChatSectionProps) {
     return {
       needsProfessionalHelp: false,
       response:
-        "Thank you for sharing with me. I'm here to listen and support you. Can you tell me more about what's been on your mind lately? Understanding your situation better will help me provide more personalized guidance. If you feel like you need more support, both psychologists and therapists can provide professional help tailored to your specific needs.",
+        "Obrigado por compartilhar comigo. Estou aqui para ouvir e apoiá-lo. Pode me contar mais sobre o que tem estado em sua mente ultimamente? Entender melhor sua situação me ajudará a fornecer orientação mais personalizada. Se você sentir que precisa de mais apoio, tanto psicólogos quanto terapeutas podem fornecer ajuda profissional adaptada às suas necessidades específicas.",
       suggestions: [
-        "Tell me more",
-        "Explore coping strategies",
-        "Learn about psychology",
-        "Find mental health support",
+        "Conte-me mais",
+        "Explorar estratégias de enfrentamento",
+        "Aprender sobre psicologia",
+        "Encontrar apoio de saúde mental",
       ],
     };
   };
@@ -389,7 +401,7 @@ export function ChatSection({ onScheduleRequest }: ChatSectionProps) {
           <Input
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
-            placeholder="Share what's on your mind..."
+            placeholder="Compartilhe o que está em sua mente..."
             onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
             className="flex-1"
           />
