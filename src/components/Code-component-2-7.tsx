@@ -28,11 +28,11 @@ interface CrisisPsychologist {
 const crisisPsychologist: CrisisPsychologist = {
   id: "crisis-1",
   name: "Dr. Sarah Johnson",
-  title: "Licensed Clinical Psychologist",
+  title: "Psicóloga Clínica Licenciado",
   specialties: ["Intervenção em Crise", "Ansiedade", "Depressão", "TEPT"],
   rating: 4.9,
   reviews: 127,
-  location: "Downtown Medical Center",
+  location: "Centro de Saúde Mental São Paulo - SP",
   availability: "Disponível para consultas de emergência",
   phone: "(555) 123-4567",
   emergencyAvailable: true,

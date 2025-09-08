@@ -62,6 +62,12 @@ export function ChatSection({ onScheduleRequest }: ChatSectionProps) {
       "self harm", "automutilação", "auto mutilação", "me cortar",
       "quero morrer", "vou me matar", "não aguento mais",
       "melhor morto", "não quero mais viver", "acabar comigo",
+      "falar com alguém", "falar com alguem", "preciso de ajuda", "ajuda imediata",
+      "me ajudar", "socorro", "salvar minha vida",
+      "crise", "crises", "ataque de pânico", "ataques de pânico",
+      "não aguento", "não suporto", "desespero", "desesperado", "desesperada",
+      "sem saída", "sem esperança", "perdido", "perdida",
+      "não vejo saída", "não tenho esperança", "tudo está perdido",
     ];
     const deathKeywords = [
       "death", "morte", "morrer",
@@ -306,11 +312,7 @@ export function ChatSection({ onScheduleRequest }: ChatSectionProps) {
                 {message.sender === "user" ? (
                   <User className="w-4 h-4" />
                 ) : (
-                  <img
-                    src="/src/images/bot.jpeg"
-                    alt="Bot"
-                    className="w-8 h-8 rounded-full object-cover"
-                  />
+                   <Bot className="w-8 h-8 rounded-full" />
                 )}
               </div>
               <div className="flex flex-col space-y-2">
@@ -368,11 +370,7 @@ export function ChatSection({ onScheduleRequest }: ChatSectionProps) {
           <div className="flex justify-start">
             <div className="flex items-start space-x-2">
               <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center">
-                <img
-                  src="/src/images/bot.jpeg"
-                  alt="Bot"
-                  className="w-8 h-8 rounded-full object-cover"
-                />
+                  <Bot className="w-8 h-8 rounded-full" />
               </div>
               <Card className="bg-card">
                 <CardContent className="p-3">
@@ -409,7 +407,7 @@ export function ChatSection({ onScheduleRequest }: ChatSectionProps) {
             onClick={handleSendMessage}
             size="icon"
             disabled={!inputValue.trim()}
-            style={{ backgroundColor: "#3973BF", color: "white" }}
+            style={{ backgroundColor: "#6FBFB7", color: "white" }}
             className="hover:opacity-90 transition-opacity"
           >
             <Send className="w-4 h-4" />
