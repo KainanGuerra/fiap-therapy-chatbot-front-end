@@ -35,7 +35,7 @@ const mockAppointments: Appointment[] = [
     id: "1",
     specialistId: "1",
     specialistName: "Dr. Sarah Johnson",
-    specialistTitle: "Licensed Clinical Psychologist",
+    specialistTitle: "Psicológa Clínica Licenciada",
     date: "2024-09-10",
     time: "2:00 PM",
     duration: "50 minutos",
@@ -54,7 +54,7 @@ const mockAppointments: Appointment[] = [
     duration: "60 minutos",
     type: "in-person",
     status: "upcoming",
-    location: "Family Counseling Center",
+    location: "Centro de Aconselhamento Familiar",
     sessionType: "Terapia de Casais",
   },
   {
@@ -104,7 +104,7 @@ export function MySchedule({ newAppointment }: MyScheduleProps) {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", {
+    return date.toLocaleDateString("pt-BR", {
       weekday: "long",
       year: "numeric",
       month: "long",

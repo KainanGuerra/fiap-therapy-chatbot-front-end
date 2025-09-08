@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { CrisisPsychologistCard } from "./CrisisPsychologistCard";
+import { CrisisPsychologistCarousel } from "./CrisisPsychologistCarousel";
 import { Send, Bot, User, Calendar, Heart, Lightbulb } from "lucide-react";
 
 interface Message {
@@ -275,13 +275,18 @@ export function ChatSection({ onScheduleRequest }: ChatSectionProps) {
     }
   };
 
-  const handleCrisisSchedule = () => {
+  // Funções para o carrossel de crise
+  const handleCrisisSchedule = (psychologist?: any) => {
     onScheduleRequest();
   };
 
-  const handleEmergencyCall = () => {
+  const handleEmergencyCall = (psychologist?: any) => {
     // In a real app, this would initiate a phone call
-    window.open("tel:(555)123-4567", "_self");
+    if (psychologist && psychologist.phone) {
+      window.open(`tel:${psychologist.phone.replace(/[^\d]/g, "")}`);
+    } else {
+      window.open("tel:(555)123-4567", "_self");
+    }
   };
 
   return (
@@ -355,7 +360,7 @@ export function ChatSection({ onScheduleRequest }: ChatSectionProps) {
 
                 {message.showCrisisCard && (
                   <div className="mt-4">
-                    <CrisisPsychologistCard
+                    <CrisisPsychologistCarousel
                       onSchedule={handleCrisisSchedule}
                       onEmergencyCall={handleEmergencyCall}
                     />
