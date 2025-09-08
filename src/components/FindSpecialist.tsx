@@ -41,106 +41,106 @@ const mockSpecialists: Specialist[] = [
   {
     id: "1",
     name: "Dr. Sarah Johnson",
-    title: "Licensed Clinical Psychologist",
+    title: "Psicóloga Clínica Licenciada",
     specialties: [
-      "Anxiety",
-      "Depression",
-      "PTSD",
-      "Cognitive Behavioral Therapy",
+      "Ansiedade",
+      "Depressão",
+      "TEPT",
+      "Terapia Cognitivo-Comportamental",
     ],
     rating: 4.9,
     reviews: 127,
-    location: "Downtown Medical Center",
-    distance: "2.3 miles",
-    availability: "Available this week",
+    location: "Centro Médico Vila Madalena - São Paulo",
+    distance: "3,7 km",
+    availability: "Disponível esta semana",
     phone: "(555) 123-4567",
     email: "sarah.johnson@therapy.com",
-    bio: "Dr. Johnson has over 10 years of experience helping individuals overcome anxiety and depression through evidence-based therapeutic approaches.",
-    price: "R$120-150/session",
+    bio: "Dra. Johnson tem mais de 10 anos de experiência ajudando indivíduos a superar ansiedade e depressão através de abordagens terapêuticas baseadas em evidências.",
+    price: "R$120-150/sessão",
   },
   {
     id: "2",
     name: "Dr. Michael Chen",
-    title: "Psychiatrist & Therapist",
+    title: "Psiquiatra e Terapeuta",
     specialties: [
-      "Bipolar Disorder",
-      "Medication Management",
-      "Mood Disorders",
+      "Transtorno Bipolar",
+      "Manejo de Medicação",
+      "Transtornos de Humor",
     ],
     rating: 4.8,
     reviews: 89,
-    location: "Westside Wellness Clinic",
-    distance: "4.1 miles",
-    availability: "Next available: Monday",
+    location: "Clínica Bem-Estar Zona Oeste - São Paulo",
+    distance: "6,6 km",
+    availability: "Próximo disponível: Segunda-feira",
     phone: "(555) 234-5678",
     email: "michael.chen@wellness.com",
-    bio: "Specializes in combining medication management with therapy for comprehensive mental health treatment.",
-    price: "R$180-220/session",
+    bio: "Especializa-se em combinar manejo de medicação com terapia para tratamento abrangente de saúde mental.",
+    price: "R$180-220/sessão",
   },
   {
     id: "3",
     name: "Dr. Emily Rodriguez",
-    title: "Licensed Marriage & Family Therapist",
-    specialties: ["Couples Therapy", "Family Therapy", "Relationship Issues"],
+    title: "Terapeuta de Casais e Família Licenciada",
+    specialties: ["Terapia de Casais", "Terapia Familiar", "Problemas de Relacionamento"],
     rating: 4.7,
     reviews: 156,
-    location: "Family Counseling Center",
-    distance: "1.8 miles",
-    availability: "Available today",
+    location: "Centro de Terapia Familiar - Ipanema, Rio de Janeiro",
+    distance: "2,9 km",
+    availability: "Disponível hoje",
     phone: "(555) 345-6789",
     email: "emily.rodriguez@family.com",
-    bio: "Dedicated to helping couples and families build stronger, healthier relationships through effective communication.",
-    price: "R$100-130/session",
+    bio: "Dedicada a ajudar casais e famílias a construir relacionamentos mais fortes e saudáveis através de comunicação eficaz.",
+    price: "R$100-130/sessão",
   },
   {
     id: "5",
     name: "Dr. James Wilson",
-    title: "Clinical Psychologist",
-    specialties: ["Trauma", "EMDR", "Addiction Recovery", "Group Therapy"],
+    title: "Psicólogo Clínico",
+    specialties: ["Trauma", "EMDR", "Recuperação de Dependência", "Terapia em Grupo"],
     rating: 4.6,
     reviews: 203,
-    location: "Recovery & Wellness Institute",
-    distance: "3.7 miles",
-    availability: "Next available: Wednesday",
+    location: "Instituto de Recuperação e Bem-Estar - Bela Vista, São Paulo",
+    distance: "6,0 km",
+    availability: "Próximo disponível: Quarta-feira",
     phone: "(555) 456-7890",
     email: "james.wilson@recovery.com",
-    bio: "Experienced in trauma recovery and addiction treatment with a focus on holistic healing approaches.",
-    price: "R$140-170/session",
+    bio: "Experiente em recuperação de trauma e tratamento de dependência com foco em abordagens de cura holística.",
+    price: "R$140-170/sessão",
   },
   {
     id: "4",
     name: "Dr. Lisa Thompson",
-    title: "Neuropsychologist",
+    title: "Neuropsicóloga",
     specialties: [
-      "ADHD Assessment",
-      "Cognitive Assessment",
-      "Learning Disabilities",
-      "Brain Injury",
+      "Avaliação de TDAH",
+      "Avaliação Cognitiva",
+      "Dificuldades de Aprendizagem",
+      "Lesão Cerebral",
     ],
     rating: 4.8,
     reviews: 94,
-    location: "Mind & Brain Health Center",
-    distance: "2.9 miles",
-    availability: "Available next week",
+    location: "Centro de Saúde Mental e Neurológica - Botafogo, Rio de Janeiro",
+    distance: "4,7 km",
+    availability: "Disponível na próxima semana",
     phone: "(555) 567-8901",
     email: "lisa.thompson@mindbrain.com",
-    bio: "Specializes in neuropsychological assessment and treatment, helping individuals understand how brain function affects behavior and learning.",
-    price: "R$200-250/session",
+    bio: "Especializa-se em avaliação e tratamento neuropsicológico, ajudando indivíduos a entender como a função cerebral afeta o comportamento e aprendizagem.",
+    price: "R$200-250/sessão",
   },
   {
     id: "6",
     name: "Dr. David Kumar",
-    title: "Behavioral Psychologist",
-    specialties: ["Behavior Modification", "OCD", "Phobias", "Habit Disorders"],
+    title: "Psicólogo Comportamental",
+    specialties: ["Modificação de Comportamento", "TOC", "Fobias", "Transtornos de Hábito"],
     rating: 4.7,
     reviews: 112,
-    location: "Behavioral Health Associates",
-    distance: "3.2 miles",
-    availability: "Available this week",
+    location: "Associados em Saúde Comportamental - Pinheiros, São Paulo",
+    distance: "5,1 km",
+    availability: "Disponível esta semana",
     phone: "(555) 678-9012",
     email: "david.kumar@behavioral.com",
-    bio: "Expert in behavior analysis and modification techniques, specializing in treating obsessive-compulsive disorder and specific phobias.",
-    price: "R$130-160/session",
+    bio: "Especialista em análise e técnicas de modificação de comportamento, especializado no tratamento de transtorno obsessivo-compulsivo e fobias específicas.",
+    price: "R$130-160/sessão",
   },
 ];
 
@@ -193,7 +193,7 @@ export function FindSpecialist({ onScheduleAppointment }: FindSpecialistProps) {
         <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1">
             <Input
-              placeholder="Search by name or specialty..."
+              placeholder="Buscar por nome ou especialidade..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full"
@@ -205,10 +205,10 @@ export function FindSpecialist({ onScheduleAppointment }: FindSpecialistProps) {
               onValueChange={setSelectedSpecialty}
             >
               <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Specialty" />
+                <SelectValue placeholder="Especialidade" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All Specialties</SelectItem>
+                <SelectItem value="all">Todas as Especialidades</SelectItem>
                 {allSpecialties.map((specialty) => (
                   <SelectItem key={specialty} value={specialty}>
                     {specialty}
@@ -222,9 +222,9 @@ export function FindSpecialist({ onScheduleAppointment }: FindSpecialistProps) {
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="rating">Rating</SelectItem>
-                <SelectItem value="distance">Distance</SelectItem>
-                <SelectItem value="price">Price</SelectItem>
+                <SelectItem value="rating">Avaliação</SelectItem>
+                <SelectItem value="distance">Distância</SelectItem>
+                <SelectItem value="price">Preço</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -234,7 +234,7 @@ export function FindSpecialist({ onScheduleAppointment }: FindSpecialistProps) {
       {/* Results */}
       <div className="space-y-4">
         <p className="text-muted-foreground">
-          {filteredAndSortedSpecialists.length} specialists found
+          {filteredAndSortedSpecialists.length} especialistas encontrados
         </p>
 
         {filteredAndSortedSpecialists.map((specialist) => (
@@ -289,7 +289,7 @@ export function FindSpecialist({ onScheduleAppointment }: FindSpecialistProps) {
               <p className="text-sm text-muted-foreground">{specialist.bio}</p>
 
               <div className="space-y-2">
-                <p className="text-sm font-medium">Specialties:</p>
+                <p className="text-sm font-medium">Especialidades:</p>
                 <div className="flex flex-wrap gap-2">
                   {specialist.specialties.map((specialty) => (
                     <Badge key={specialty} variant="secondary">
@@ -314,7 +314,7 @@ export function FindSpecialist({ onScheduleAppointment }: FindSpecialistProps) {
                 <div className="flex space-x-2">
                   <Button variant="outline" size="sm">
                     <Mail className="w-4 h-4 mr-2" />
-                    Contact
+                    Contato
                   </Button>
                   <button
                     onClick={() => onScheduleAppointment(specialist)}
@@ -332,7 +332,7 @@ export function FindSpecialist({ onScheduleAppointment }: FindSpecialistProps) {
                     }
                   >
                     <Calendar className="w-4 h-4 mr-2" />
-                    Schedule
+                    Agendar
                   </button>
                 </div>
               </div>

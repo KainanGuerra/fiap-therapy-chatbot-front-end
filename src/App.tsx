@@ -59,18 +59,18 @@ export default function App() {
                 src="src/images/psy-care-logo.png" // update to your actual path
                 alt="PsyCare logo"
                 style={{ backgroundColor: "transparent" }}
-                className="w-10 h-10 object-contain"
+                className="w-12 h-12 object-contain"
                 loading="eager"
                 decoding="async"
               />
             </div>
             <div>
               <h1 className="text-2xl font-semibold">
-                <span style={{ color: "#032340" }}>Psy</span>
-                <span style={{ color: "#6FBFB7" }}>Care</span>
+                <span style={{ color: "#032340" }}>Estar</span>
+                <span style={{ color: "#6FBFB7" }}>Bem</span>
               </h1>
               <p className="text-muted-foreground">
-                Your mental health companion
+                Seu companheiro de saúde mental
               </p>
             </div>
           </div>
@@ -90,14 +90,14 @@ export default function App() {
               className="flex items-center space-x-2"
             >
               <Search className="w-4 h-4" />
-              <span>Find Specialist</span>
+              <span>Encontrar Especialista</span>
             </TabsTrigger>
             <TabsTrigger
               value="schedule"
               className="flex items-center space-x-2"
             >
               <Calendar className="w-4 h-4" />
-              <span>My Schedule</span>
+              <span>Minha Agenda</span>
             </TabsTrigger>
           </TabsList>
 
@@ -106,12 +106,13 @@ export default function App() {
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <MessageCircle className="w-5 h-5" />
-                  <span>Chat with PsyCare Assistant</span>
+                  <span>Conversar com o Assistente EstarBem</span>
                 </CardTitle>
                 <p className="text-muted-foreground">
-                  Share your thoughts and feelings in a safe, supportive
-                  environment. Our AI assistant can provide coping strategies or
-                  help you connect with professional support when needed.
+                  Compartilhe seus pensamentos e sentimentos em um ambiente 
+                  seguro e acolhedor. Nosso assistente de IA pode fornecer 
+                  estratégias de enfrentamento ou ajudá-lo a se conectar com 
+                  suporte profissional quando necessário.
                 </p>
               </CardHeader>
               <CardContent>
@@ -124,11 +125,11 @@ export default function App() {
             <div className="w-full max-w-6xl mx-auto">
               <div className="mb-6">
                 <h2 className="text-2xl font-semibold mb-2">
-                  Find a Mental Health Specialist
+                  Encontrar um Especialista em Saúde Mental
                 </h2>
                 <p className="text-muted-foreground">
-                  Connect with qualified therapists, psychologists, and
-                  psychiatrists in your area.
+                  Conecte-se com terapeutas, psicólogos e psiquiatras 
+                  qualificados na sua região.
                 </p>
               </div>
 
@@ -168,10 +169,10 @@ export default function App() {
                     </svg>
                   </div>
                   <h3 className="font-semibold text-sm">
-                    Licensed Professionals
+                    Profissionais Licenciados
                   </h3>
                   <p className="text-xs text-muted-foreground">
-                    All specialists are verified and licensed
+                    Todos os especialistas são verificados e licenciados
                   </p>
                 </Card>
                 <Card className="text-center p-4">
@@ -234,10 +235,10 @@ export default function App() {
                     </svg>
                   </div>
                   <h3 className="font-semibold text-sm">
-                    Personalized Matching
+                    Correspondência Personalizada
                   </h3>
                   <p className="text-xs text-muted-foreground">
-                    Find specialists that match your needs
+                    Encontre especialistas que atendam às suas necessidades
                   </p>
                 </Card>
                 <Card className="text-center p-4">
@@ -273,9 +274,9 @@ export default function App() {
                       />
                     </svg>
                   </div>
-                  <h3 className="font-semibold text-sm">Compassionate Care</h3>
+                  <h3 className="font-semibold text-sm">Cuidado Compassivo</h3>
                   <p className="text-xs text-muted-foreground">
-                    Dedicated to your mental wellness
+                    Dedicado ao seu bem-estar mental
                   </p>
                 </Card>
               </div>
@@ -289,10 +290,10 @@ export default function App() {
           <TabsContent value="schedule">
             <div className="w-full max-w-4xl mx-auto">
               <div className="mb-6">
-                <h2 className="text-2xl font-semibold mb-2">My Schedule</h2>
+                <h2 className="text-2xl font-semibold mb-2">Minha Agenda</h2>
                 <p className="text-muted-foreground">
-                  Manage your therapy appointments and track your mental health
-                  journey.
+                  Gerencie seus agendamentos de terapia e acompanhe sua 
+                  jornada de saúde mental.
                 </p>
               </div>
               <MySchedule newAppointment={selectedSpecialist} />
@@ -306,13 +307,12 @@ export default function App() {
         <div className="container mx-auto px-4 py-8">
           <div className="text-center text-muted-foreground">
             <p className="text-sm">
-              <strong>Important:</strong> If you're experiencing a mental health
-              crisis, please contact emergency services or a crisis helpline
-              immediately.
+              <strong>Importante:</strong> Se você está enfrentando uma crise 
+              de saúde mental, entre em contato com os serviços de emergência 
+              ou uma linha de apoio à crise imediatamente.
             </p>
             <p className="text-xs mt-2">
-              Crisis Text Line: Text HOME to 741741 | National Suicide
-              Prevention Lifeline: 988
+              Centro de Valorização da Vida: 188 | Emergência: 192 ou 193
             </p>
           </div>
         </div>

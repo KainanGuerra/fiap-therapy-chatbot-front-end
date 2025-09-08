@@ -29,11 +29,11 @@ const crisisPsychologist: CrisisPsychologist = {
   id: "crisis-1",
   name: "Dr. Sarah Johnson",
   title: "Licensed Clinical Psychologist",
-  specialties: ["Crisis Intervention", "Anxiety", "Depression", "PTSD"],
+  specialties: ["Intervenção em Crise", "Ansiedade", "Depressão", "TEPT"],
   rating: 4.9,
   reviews: 127,
   location: "Downtown Medical Center",
-  availability: "Available for emergency consultations",
+  availability: "Disponível para consultas de emergência",
   phone: "(555) 123-4567",
   emergencyAvailable: true,
 };
@@ -59,12 +59,12 @@ export function CrisisPsychologistCard({
         >
           <AlertTriangle className="w-5 h-5" />
           <CardTitle className="text-lg">
-            Immediate Professional Support Available
+            Suporte profissional imediato disponível
           </CardTitle>
         </div>
         <p className="text-sm" style={{ color: "#3973BF" }}>
-          We're concerned about you. Here's a crisis specialist who can help
-          right now.
+          Estamos preocupados com você. Aqui está um especialista em crises que
+          pode ajudar agora mesmo.
         </p>
       </CardHeader>
 
@@ -125,7 +125,7 @@ export function CrisisPsychologistCard({
               className="flex-1 bg-red-600 hover:bg-red-700 text-white"
             >
               <Phone className="w-4 h-4 mr-2" />
-              Call Now - Emergency
+              Ligue agora - Emergência
             </Button>
             <Button
               onClick={onSchedule}
@@ -133,13 +133,13 @@ export function CrisisPsychologistCard({
               className="flex-1 border-red-200 text-red-700 hover:bg-red-50 dark:border-red-800 dark:text-red-300"
             >
               <Calendar className="w-4 h-4 mr-2" />
-              Schedule Appointment
+              Agendar consulta
             </Button>
           </div>
 
           <div className="text-xs text-center text-muted-foreground bg-white dark:bg-gray-900 p-3 rounded-md border">
-            <strong>Crisis Resources:</strong> National Suicide Prevention
-            Lifeline: 988 | Crisis Text Line: Text HOME to 741741
+            <strong>Recursos de crise:</strong> Prevenção Nacional do Suicídio
+            Linha de vida: 988 | Linha de texto de crise: 741741
           </div>
         </div>
       </CardContent>
