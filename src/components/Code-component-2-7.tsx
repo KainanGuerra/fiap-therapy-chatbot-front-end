@@ -1,9 +1,16 @@
-import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
-import { Badge } from './ui/badge';
-import { Avatar, AvatarFallback } from './ui/avatar';
-import { AlertTriangle, Phone, Calendar, MapPin, Star, Clock } from 'lucide-react';
+import React from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Button } from "./ui/button";
+import { Badge } from "./ui/badge";
+import { Avatar, AvatarFallback } from "./ui/avatar";
+import {
+  AlertTriangle,
+  Phone,
+  Calendar,
+  MapPin,
+  Star,
+  Clock,
+} from "lucide-react";
 
 interface CrisisPsychologist {
   id: string;
@@ -19,16 +26,16 @@ interface CrisisPsychologist {
 }
 
 const crisisPsychologist: CrisisPsychologist = {
-  id: 'crisis-1',
-  name: 'Dr. Sarah Johnson',
-  title: 'Licensed Clinical Psychologist',
-  specialties: ['Crisis Intervention', 'Anxiety', 'Depression', 'PTSD'],
+  id: "crisis-1",
+  name: "Dr. Sarah Johnson",
+  title: "Licensed Clinical Psychologist",
+  specialties: ["Crisis Intervention", "Anxiety", "Depression", "PTSD"],
   rating: 4.9,
   reviews: 127,
-  location: 'Downtown Medical Center',
-  availability: 'Available for emergency consultations',
-  phone: '(555) 123-4567',
-  emergencyAvailable: true
+  location: "Downtown Medical Center",
+  availability: "Available for emergency consultations",
+  phone: "(555) 123-4567",
+  emergencyAvailable: true,
 };
 
 interface CrisisPsychologistCardProps {
@@ -36,52 +43,73 @@ interface CrisisPsychologistCardProps {
   onEmergencyCall: () => void;
 }
 
-export function CrisisPsychologistCard({ onSchedule, onEmergencyCall }: CrisisPsychologistCardProps) {
+export function CrisisPsychologistCard({
+  onSchedule,
+  onEmergencyCall,
+}: CrisisPsychologistCardProps) {
   return (
-    <Card className="border-red-200 bg-red-50 dark:bg-red-950/20 dark:border-red-800">
+    <Card
+      className="border-blue-200 bg-blue-50 dark:bg-blue-950/20 dark:border-blue-800"
+      style={{ borderColor: "#94CEF2", backgroundColor: "#f0f8ff" }}
+    >
       <CardHeader className="pb-3">
-        <div className="flex items-center space-x-2 text-red-700 dark:text-red-300">
+        <div
+          className="flex items-center space-x-2"
+          style={{ color: "#5B9ED9" }}
+        >
           <AlertTriangle className="w-5 h-5" />
-          <CardTitle className="text-lg">Immediate Professional Support Available</CardTitle>
+          <CardTitle className="text-lg">
+            Immediate Professional Support Available
+          </CardTitle>
         </div>
-        <p className="text-sm text-red-600 dark:text-red-400">
-          We're concerned about you. Here's a crisis specialist who can help right now.
+        <p className="text-sm" style={{ color: "#3973BF" }}>
+          We're concerned about you. Here's a crisis specialist who can help
+          right now.
         </p>
       </CardHeader>
-      
+
       <CardContent className="space-y-4">
         <div className="flex items-start space-x-4 bg-white dark:bg-gray-900 p-4 rounded-lg">
           <Avatar className="w-12 h-12">
             <AvatarFallback className="bg-primary text-primary-foreground">
-              {crisisPsychologist.name.split(' ').map(n => n[0]).join('')}
+              {crisisPsychologist.name
+                .split(" ")
+                .map((n) => n[0])
+                .join("")}
             </AvatarFallback>
           </Avatar>
-          
+
           <div className="flex-1 space-y-2">
             <div>
               <h4 className="font-semibold">{crisisPsychologist.name}</h4>
-              <p className="text-sm text-muted-foreground">{crisisPsychologist.title}</p>
+              <p className="text-sm text-muted-foreground">
+                {crisisPsychologist.title}
+              </p>
             </div>
-            
+
             <div className="flex items-center space-x-4 text-sm">
               <div className="flex items-center space-x-1">
                 <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                 <span>{crisisPsychologist.rating}</span>
-                <span className="text-muted-foreground">({crisisPsychologist.reviews} reviews)</span>
+                <span className="text-muted-foreground">
+                  ({crisisPsychologist.reviews} reviews)
+                </span>
               </div>
               <div className="flex items-center space-x-1 text-muted-foreground">
                 <MapPin className="w-4 h-4" />
                 <span>{crisisPsychologist.location}</span>
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-1 text-green-600 dark:text-green-400">
               <Clock className="w-4 h-4" />
-              <span className="text-sm font-medium">{crisisPsychologist.availability}</span>
+              <span className="text-sm font-medium">
+                {crisisPsychologist.availability}
+              </span>
             </div>
-            
+
             <div className="flex flex-wrap gap-2">
-              {crisisPsychologist.specialties.slice(0, 3).map(specialty => (
+              {crisisPsychologist.specialties.slice(0, 3).map((specialty) => (
                 <Badge key={specialty} variant="secondary" className="text-xs">
                   {specialty}
                 </Badge>
@@ -89,28 +117,29 @@ export function CrisisPsychologistCard({ onSchedule, onEmergencyCall }: CrisisPs
             </div>
           </div>
         </div>
-        
+
         <div className="space-y-3">
           <div className="flex space-x-2">
-            <Button 
+            <Button
               onClick={onEmergencyCall}
               className="flex-1 bg-red-600 hover:bg-red-700 text-white"
             >
               <Phone className="w-4 h-4 mr-2" />
               Call Now - Emergency
             </Button>
-            <Button 
+            <Button
               onClick={onSchedule}
-              variant="outline" 
+              variant="outline"
               className="flex-1 border-red-200 text-red-700 hover:bg-red-50 dark:border-red-800 dark:text-red-300"
             >
               <Calendar className="w-4 h-4 mr-2" />
               Schedule Appointment
             </Button>
           </div>
-          
+
           <div className="text-xs text-center text-muted-foreground bg-white dark:bg-gray-900 p-3 rounded-md border">
-            <strong>Crisis Resources:</strong> National Suicide Prevention Lifeline: 988 | Crisis Text Line: Text HOME to 741741
+            <strong>Crisis Resources:</strong> National Suicide Prevention
+            Lifeline: 988 | Crisis Text Line: Text HOME to 741741
           </div>
         </div>
       </CardContent>
