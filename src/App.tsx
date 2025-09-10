@@ -57,7 +57,7 @@ export default function App() {
             <div className="w-12 h-12 rounded-lg flex items-center justify-center">
               <img
                 src="/images/psy-care-logo.png" // update to your actual path
-                alt="PsyCare logo"
+                alt="ConnectMind logo"
                 style={{ backgroundColor: "transparent" }}
                 loading="eager"
                 decoding="async"
