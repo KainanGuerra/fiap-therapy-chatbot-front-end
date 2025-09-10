@@ -23,7 +23,7 @@ interface Appointment {
   date: string;
   time: string;
   duration: string;
-  type: "in-person" | "video" | "phone";
+  type: "presencial" | "video" | "phone";
   status: "upcoming" | "completed" | "cancelled";
   location?: string;
   notes?: string;
@@ -52,7 +52,7 @@ const mockAppointments: Appointment[] = [
     date: "2024-09-12",
     time: "10:00 AM",
     duration: "60 minutos",
-    type: "in-person",
+    type: "presencial",
     status: "upcoming",
     location: "Centro de Aconselhamento Familiar",
     sessionType: "Terapia de Casais",
@@ -131,7 +131,7 @@ export function MySchedule({ newAppointment }: MyScheduleProps) {
         return <Video className="w-4 h-4" />;
       case "phone":
         return <Phone className="w-4 h-4" />;
-      case "in-person":
+      case "presencial":
         return <MapPin className="w-4 h-4" />;
       default:
         return null;
