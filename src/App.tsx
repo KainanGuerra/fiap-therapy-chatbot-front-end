@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
 import { ChatSection } from "./components/ChatSection";
@@ -56,7 +56,7 @@ export default function App() {
           <div className="flex items-center space-x-3">
             <div className="w-12 h-12 rounded-lg flex items-center justify-center">
               <img
-                src="src/images/psy-care-logo.png" // update to your actual path
+                src="/images/psy-care-logo.png" // update to your actual path
                 alt="PsyCare logo"
                 style={{ backgroundColor: "transparent" }}
                 loading="eager"

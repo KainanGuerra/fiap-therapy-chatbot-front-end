@@ -145,7 +145,7 @@ export function MySchedule({ newAppointment }: MyScheduleProps) {
           <div className="flex items-center space-x-3">
             <Avatar>
               <AvatarImage
-                src={`/src/images/dr${appointment.specialistId}.png`}
+                src={`/images/dr${appointment.specialistId}.png`}
                 alt={appointment.specialistName}
               />
               <AvatarFallback>

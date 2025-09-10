@@ -258,7 +258,7 @@ export function FindSpecialist({ onScheduleAppointment }: FindSpecialistProps) {
                 <div className="flex items-center space-x-4">
                   <Avatar className="w-16 h-16">
                     <AvatarImage
-                      src={`/src/images/dr${specialist.id}.png`}
+                      src={`/images/dr${specialist.id}.png`}
                       alt={specialist.name}
                     />
                     <AvatarFallback>
